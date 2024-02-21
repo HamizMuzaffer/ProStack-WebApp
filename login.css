@@ -1,0 +1,133 @@
+@font-face {
+    font-family: Roboto;
+    src: url(./Assests/Fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(./Assests/Fonts/Roboto/Roboto-Light.ttf);
+}
+
+body {
+    background-color: #232F3D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 40vw;
+    height: 70vh;
+    background-color: white;
+    margin-top: 15vh;
+    border-radius: 2vw;
+    border: solid 3px #FF9A01;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.logo {
+    width: 20vw;
+    height: 15vh;
+    object-fit: contain;
+
+}
+
+.container h2 {
+    font-family: Roboto;
+    font-size: x-large;
+    margin-top: -1vh;
+    margin-bottom: 4vh;
+    color:#232F3D ;
+}
+
+
+p {
+    font-family: RobotoLight;
+    margin-right: 28vw;
+    font-weight: bold;
+    
+}
+
+.password {
+    margin-right: 30vw;
+}
+
+.text-box {
+    height: 3vh;
+    width: 35vw;
+}
+
+.text-box2 {
+    height: 3vh;
+    width: 35vw;
+}
+
+#checkbox {
+
+    margin-right: 35vw;
+    margin-top: 2vh;
+    background-color: #FF9A01;
+}
+
+#myspan {
+    margin-top: -2vh;
+    margin-right: 24vw;
+    font-family: RobotoLight;
+    font-weight: bold;
+
+}
+#newspan{
+    margin-left: 25vw;
+    font-family: RobotoLight;
+    color: #FF9A01;
+    font-weight: 900;
+    margin-top: -2vh;
+}
+.signinBtn{
+    height: 4vh;
+    width: 35vw;
+    margin-top: 3vh;
+    background-color: #232F3D ;
+    color: white;
+    border-radius: 1vw;
+    font-weight: bolder;
+}
+#sub-text{
+    font-family: RobotoLight;
+    font-size: medium;
+    margin-top: 3vh;
+    
+    
+}
+
+.btn{
+    display: flex;
+    
+}
+#myBtn{
+    width: 15vw;
+    height: 5vh;
+    margin: 1vw;
+    font-family: Roboto;
+    font-size: large;
+    border: 0.5px solid  #232F3D ;
+}
+
+.btnGoggle{
+    width: 1.5vw;
+    height: 2vh;
+    margin-right: 1vw;
+    
+    background-position-y: 15;
+}
+
+.btnGithub{
+    width: 1.5vw;
+    height: 2vh;
+    margin-right: 1vw;
+    
+    
+}
