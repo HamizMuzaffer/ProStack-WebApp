@@ -2,7 +2,79 @@
 
 #136EB4   !ligght blue
 #232F3D   !grey  
-#FF9A01   !yellow
+#FF9A01    !yellow
 ##F7F7F7  !white 
 */ 
+@font-face {
+    font-family: Roboto;
+    src: url(./Assests/Fonts/Roboto/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: sans;
+    src: url(./Assests/Fonts/JosefinSans/static/JosefinSans-Regular.ttf);
+}
+*{
+    margin: 0;
+    
+}
+body{
+    background-color: #232F3D;
+}
+
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color:  #FF9A01;
+    display: flex;
+}
+.nav-logo{
+    width: 90px;
+    height: 90px;
+    margin-top: -5px;
+}
+.nav-heading{
+font-family: sans;
+color: #232F3D;
+font-size: larger;
+margin-top: 30px;
+margin-right: 45px;
+}
+
+.input-box{
+    width: 500px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.btn{
+    width: 60px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #232F3D;
+
+}
+.search{
+    height: 25px;
+    width: 40px;
+   
+    
+}
+.mainBtns{
+    margin-left: 130px;
+    display: flex;
+    
+   
+}
+
+.mainBtns button{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 5px;
+    background-color: #232F3D;
+    color: #FF9A01;
+    font-family: sans;
+    font-size: normal;
+}
 
