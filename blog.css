@@ -1,10 +1,4 @@
-/* colors 
 
-#136EB4   !ligght blue
-#232F3D   !grey  
-#FF9A01    !yellow
-##F7F7F7  !white 
-*/ 
 @font-face {
     font-family: Roboto;
     src: url(./Assests/Fonts/Roboto/Roboto-Medium.ttf);
@@ -47,6 +41,7 @@ margin-right: 0px;
     margin-top: 20px;
     margin-left: 60px;
     background-color: white;
+  
 }
 
 .mybtn{
@@ -54,6 +49,7 @@ margin-right: 0px;
     height: 40px !important;
     margin-top: 20px;
     background-color: #232F3D;
+    margin-right: 400px;
 
 }
 
@@ -73,8 +69,8 @@ margin-right: 0px;
     
 }
 .mainBtns{
-    margin-left: 130px;
-    display: flex;
+    margin-left: 190px;
+    display:none;
     
    
 }
@@ -104,11 +100,19 @@ margin-right: 0px;
     min-height: 100vh;
     width: 60%;
     background-color:#232F3D;
-    border: 1px solid white;
     border-top: 0;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .container3{
     min-height: 100vh;
     width: 25%;
+}
+
+.question{
+    width: 70%;
+    max-height: 30vh;
+    background-color:#FF9A01 ;
 }

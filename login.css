@@ -48,6 +48,8 @@ p {
     font-family: RobotoLight;
     margin-right: 28vw;
     font-weight: bold;
+    margin-left: 1vw;
+
     
 }
 
@@ -58,11 +60,15 @@ p {
 .text-box {
     height: 3vh;
     width: 35vw;
+    margin-left: 1vw;
+    
 }
 
 .text-box2 {
     height: 3vh;
     width: 35vw;
+    margin-left: 1vw;
+
 }
 
 #checkbox {
@@ -94,6 +100,7 @@ p {
     color: white;
     border-radius: 1vw;
     font-weight: bolder;
+    margin-left: 2vw;
 }
 #sub-text{
     font-family: RobotoLight;
@@ -116,6 +123,19 @@ p {
     border: 0.5px solid  #232F3D ;
 }
 
+#myBtn2{
+    width: 15vw;
+    height: 5vh;
+    margin: 1vw;
+    font-family: Roboto;
+    font-size: large;
+    border: 0.5px solid  #232F3D ;
+}
+
+#myBtn:hover{
+    cursor: pointer;
+}
+
 .btnGoggle{
     width: 1.5vw;
     height: 2vh;
@@ -124,7 +144,7 @@ p {
     background-position-y: 15;
 }
 
-.btnGithub{
+.btnFacebook{
     width: 1.5vw;
     height: 2vh;
     margin-right: 1vw;
