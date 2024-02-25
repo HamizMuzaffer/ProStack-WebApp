@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./Assests/Images/botIcon.png">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="blog.css">
+    <script type="module" src="./login.js"></script>
 </head>
 <body>
 
@@ -63,7 +64,37 @@
     </div>
     <div class="container2">
         <div class="question">
-        
+        <form action="">
+         <input type="text" id="header-box" placeholder="Enter Title" required>
+         <br>
+         
+           <label for="type" id="myLabel1">Select Type</label>
+           <br>
+           <label for="Blog" id="subLabel" class="blog">Blog</label>
+           <input type="radio" name="Blog" id="blog" value="Blog">
+           <label for="" id="subLabel">Query</label>
+           <input type="radio" name="query" id="query" value="Query" unchecked>
+
+         <label for="Category" id="myLabel">Choose a Category:</label><br>
+         <select  id="dropdown" >
+           <option value="JavaScript">JavaScript</option>
+           <option value="React">React</option>
+           <option value="HTML">HTML</option>
+           <option value="CSS">CSS</option>
+         </select>
+      
+         <input type="text" class="textbox" id="Input-Text" required> 
+         <button class="btn" type="submit" id="myBtn">Post</button>
+         
+
+        </form>
+
+
+
+
+
+
+
         </div>
   
     </div>

@@ -11,6 +11,7 @@ import {
   
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
+import { getFirestore , collection , getDocs, addDoc} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDSDraXzO8OjpmLbYb6_OPoqqgwCgS8auA",
   authDomain: "prostack-5899e.firebaseapp.com",
@@ -24,25 +25,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
+
 const provider = new GoogleAuthProvider();
 const provider1 = new FacebookAuthProvider();
 
 
-const onLoad = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // loadMessages(user);
-      // emailText && (emailText.innerText = user.email);
-      if (currentPageName !== "" && currentPageName !== "index.html") {
-        window.location.href = "index.html";
-      }
-    } else {
-      if (currentPageName !== "login.html") {
-        window.location.href = "login.html";
-      }
-    }
-  });
-};
 
 const loginWithGoogle = () => signInWithPopup(auth, provider)
   .then((result) => {
@@ -114,3 +102,27 @@ createUserWithEmailAndPassword(auth, email.value, password.value)
   });
 }
  formInput && formInput.addEventListener("submit", loginWithEmail);
+
+
+
+ let heading = document.getElementById("header-box");
+
+ let query = document.getElementById("Input-Text");
+let question  = query.value;
+ let category = document.getElementById("myLabel")
+let mySumbitBtn = document.getElementById("myBtn");
+
+let headingInput = heading.value;
+
+
+
+mySumbitBtn && mySumbitBtn.addEventListener("click", ()=> {
+
+  if(query.value == "" || headingInput.value == ""){
+  alert("Error");
+  }
+  else{
+    console.log(headingInput);
+    alert("Your Blog have been posted")
+  }})
+  

@@ -112,7 +112,94 @@ margin-right: 0px;
 }
 
 .question{
-    width: 70%;
-    max-height: 30vh;
+    width: 90%;
+    height: 70vh;
     background-color:#FF9A01 ;
+    margin-top: 50px;
+    margin-left: 40px;
+    border-radius: 5vw;
+    box-shadow: #FF9A01 0px 5px 15px;
+
 }
+
+#header-box{
+    border: none;
+  border-bottom: 4px solid #232F3D;
+  background-color: #FF9A01;
+  color: #232F3D;
+  width: 40vw;
+  margin-top: 45px;
+  margin-left: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 60px;
+  }
+
+  #header-box::placeholder {
+    color: #232F3D;
+    opacity: 4; /* Firefox */
+    font-size: large;
+  }
+
+  #myLabel{
+    color: #232F3D;
+    font-size: x-large;
+    margin-left: 200px;
+    margin-top: 200px;
+    font-weight: bold;
+  }
+  #dropdown{
+    margin-left: 400px;
+    margin-top: 10px;
+    width: 20vw;
+    height: 40px;
+    font-weight: bold;
+  }
+  #myLabel1{
+    color: #232F3D;
+    font-size: x-large;
+    padding-top: 200px;
+    margin-left: 30px;
+    font-weight: bold;
+    
+    
+  }
+
+  #subLabel{
+    color: #232F3D;
+    font-size: large;
+    font-weight: bold;
+    padding-left: 30px;
+  }
+
+  .blog{
+    margin-left: 0px;
+
+  }
+  .textbox{
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 48vw;
+    height: 20vh;
+    line-height:0;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    outline: none;
+    color: #FF9A01;
+
+  }
+
+  #myBtn{
+    background-color: #232F3D !important;
+    color: white;
+    margin-top: 20px;
+    width: 90px;
+    margin-left: 40vw;
+}
+.btn:hover{
+    background-color: #232F3D !important; 
+    width: 90px;
+    
+} 
