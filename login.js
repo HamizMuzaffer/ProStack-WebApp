@@ -8,13 +8,27 @@ import {
   signOut,
   FacebookAuthProvider,
   createUserWithEmailAndPassword
-  
+
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-import { getFirestore , collection , getDocs, addDoc} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import {
+  getFirestore,
+  onSnapshot,
+  collection,
+  addDoc,
+  doc,
+  setDoc,
+  updateDoc,
+  query,
+  where,
+  getDocs,
+    } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // import { getDatabase,ref,set,push} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyDSDraXzO8OjpmLbYb6_OPoqqgwCgS8auA",
   authDomain: "prostack-5899e.firebaseapp.com",
+  databaseURL: "https://prostack-5899e-default-rtdb.firebaseio.com",
   projectId: "prostack-5899e",
   storageBucket: "prostack-5899e.appspot.com",
   messagingSenderId: "559447833786",
@@ -26,6 +40,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+// const database = getDatabase(app);
 
 const provider = new GoogleAuthProvider();
 const provider1 = new FacebookAuthProvider();
@@ -69,8 +84,9 @@ const signoutWithGoggle = () => signOut(auth)
   }).catch((error) => {
 
   });
+
 const login = document.getElementById("myBtn");
-login && login.addEventListener("click", loginWithGoogle);
+login.addEventListener("click", loginWithGoogle);
 
 const logout = document.getElementById("logoutBtn");
 logout && logout.addEventListener("click", signoutWithGoggle)
@@ -86,43 +102,121 @@ let mydata = document.getElementById("signin");
 let formInput = document.getElementById("form");
 
 const loginWithEmail = evt => {
- evt.preventDefault();
+  evt.preventDefault();
 
-createUserWithEmailAndPassword(auth, email.value, password.value)
-  .then((userCredential) => {
-         
-    // const user = userCredential.user;
-    console.log(userCredential.user);
-    window.location.href = "./final.html"
+  createUserWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
 
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+
+      console.log(userCredential.user);
+      window.location.href = "./final.html"
+
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
 }
- formInput && formInput.addEventListener("submit", loginWithEmail);
+formInput && formInput.addEventListener("submit", loginWithEmail);
 
-
-
- let heading = document.getElementById("header-box");
-
- let query = document.getElementById("Input-Text");
-let question  = query.value;
- let category = document.getElementById("myLabel")
+let heading = document.querySelector("#header-box");
+let category = document.getElementById("myLabel")
 let mySumbitBtn = document.getElementById("myBtn");
+let queryInput = document.getElementById("Input-Text");
+let mydropdown = document.getElementById("dropdown");
+let myBlog = document.getElementById("blogForm");
 
-let headingInput = heading.value;
+
+// var getFormInfo = ref(database,"blogForm");
+
+// myBlog.addEventListener("submit", submitForm);
+// function submitForm(e){
+//    e.preventDefault();
+//    let queryValue = query.value;
+//    let headingInput = heading.value;
+//    let dropdownInput = mydropdown.value;
+//    console.log(queryValue,headingInput,dropdownInput)
+//    saveMessages(queryValue,headingInput,dropdownInput)
+// }
 
 
 
-mySumbitBtn && mySumbitBtn.addEventListener("click", ()=> {
+// const saveMessages =  (queryValue,headingInput,dropdownInput)=>{
+//    var newBlogForm = getFormInfo.push();
+//    newBlogForm.set(
+//     {
+//          heading: headingInput,
+//          input: queryValue,
+//          category:dropdownInput,
 
-  if(query.value == "" || headingInput.value == ""){
-  alert("Error");
-  }
-  else{
-    console.log(headingInput);
-    alert("Your Blog have been posted")
-  }})
+//    })
+// }
+// const addDataInFirestore = async () => {
+//   let queryValue = queryInput.value; 
+//   let headingInput = heading.value;
+//   let dropdownInput = mydropdown.value;
   
+
+//   const users = {
+    
+//     header: headingInput,
+//     myquery: queryValue,
+//     dropdown : dropdownInput,
+//   };
+
+//   await setDoc(doc(db, "users"), users);
+  
+// };
+
+//  mySumbitBtn.addEventListener("submit",addDataInFirestore)
+myBlog.addEventListener("submit", async function(event) {
+  event.preventDefault(); // Prevent default form submission
+  const title = document.getElementById("header-box").value;
+  
+  const category = document.getElementById("dropdown").value;
+  const content = document.getElementById("Input-Text").value;
+
+  try {
+    // Add a new document with a generated ID
+    const docRef = await addDoc(collection(db, "blogPosts"), {
+      title: title,
+      category: category,
+      content: content
+    });
+    console.log("Document written with ID: ", docRef.id);
+    // Reset form after successful submission
+    document.getElementById("blogForm").reset();
+  } catch (error) {
+    console.error("Error adding document: ", error);
+  }
+});
+
+
+async function displayBlogPosts() {
+  const blogList = document.getElementById("blogList");
+
+  try {
+    const querySnapshot = await getDocs(collection(db, "blogPosts"));
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const listItem = document.createElement("li");
+      listItem.textContent = `Title: ${data.title}, Type: ${data.type}, Category: ${data.category}, Content: ${data.content}`;
+      blogList.appendChild(listItem);
+    });
+  } catch (error) {
+    console.error("Error fetching documents: ", error);
+  }
+}
+
+// Call the function to display blog posts
+displayBlogPosts();
+
+
+
+
+
+
+/*
+! Hamiz Muzaffer
+*/
+
