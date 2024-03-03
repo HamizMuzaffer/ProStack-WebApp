@@ -193,11 +193,16 @@ function hideDiv(){
 const getLoginPage = document.getElementById("getlogin");
 
 function getDiv(){
-  c
+  loginPage.style.zIndex = "5";
 }
 getLoginPage.addEventListener("click",getDiv);
 
-const mysignbtn = document.getElementById("signin");
-mysignbtn.addEventListener("click", ()=>{
+const mysignbtn = document.getElementById("signinbtn");
+
+function signinchange(){
+  
   loginPage.style.zIndex = "5";
-})
+  
+}
+mysignbtn.addEventListener("click", signinchange)
+
