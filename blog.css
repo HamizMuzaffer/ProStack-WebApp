@@ -113,7 +113,7 @@ margin-right: 0px;
 
 .question{
     width: 90%;
-    height: 70vh;
+    height: 72vh;
     background-color:#FF9A01 ;
     margin-top: 50px;
     margin-left: 40px;
@@ -203,3 +203,14 @@ margin-right: 0px;
     width: 90px;
     
 } 
+#imageInput{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-family:Roboto;
+    color: #FF9A01;
+    
+}
+
+.loginImg{
+    padding: 0%;
+}

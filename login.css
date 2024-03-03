@@ -7,6 +7,10 @@
     font-family: RobotoLight;
     src: url(./Assests/Fonts/Roboto/Roboto-Light.ttf);
 }
+@font-face {
+    font-family: aesthico;
+    src: url(./Assests/Fonts/Aesthico/Aesthico\(Demo\)-Regular.ttf);
+}
 
 body {
     background-color: #232F3D;
@@ -25,7 +29,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: start;
+    margin-left: 200px;
     flex-direction: column;
+    z-index: 4;
 }
 
 .logo {
@@ -46,7 +52,7 @@ body {
 
 p {
     font-family: RobotoLight;
-    margin-right: 28vw;
+    margin-right: 10vw;
     font-weight: bold;
     margin-left: 1vw;
 
@@ -101,6 +107,7 @@ p {
     border-radius: 1vw;
     font-weight: bolder;
     margin-left: 2vw;
+    margin-bottom: 1vw;
 }
 #sub-text{
     font-family: RobotoLight;
@@ -118,6 +125,7 @@ p {
     width: 15vw;
     height: 5vh;
     margin: 1vw;
+   
     font-family: Roboto;
     font-size: large;
     border: 0.5px solid  #232F3D ;
@@ -150,4 +158,83 @@ p {
     margin-right: 1vw;
     
     
+}
+.mainlogo{
+width: 400px;
+height: 400px;
+margin-left: 20px;
+margin-bottom: 150px;
+z-index: 0;
+position: relative;
+}
+.main-head{
+    font-weight: bold;
+    color: #FF9A01;
+    font-size: 60px;
+    margin-top: -200px;
+    margin-left: 50px;
+    z-index: 1;
+    font-family: aesthico;
+    
+
+}
+.sub-head{
+    margin-top: -35px;
+    color: #FF9A01;
+    margin-left: 70px;
+    font-family: Roboto;
+    font-weight: normal;
+}
+.signuptext{
+display: inline;
+/* margin-top: 30px; */
+white-space: nowrap;
+display: inline;
+margin-left: 120px;
+}
+
+.signup-text2{
+    color: #FF9A01;
+    padding-left: 10px;
+    font-family: Roboto;
+    
+}
+.signup-text2:hover{
+    cursor: pointer;
+}
+.container2{
+    width: 40vw;
+    height: 70vh;
+    background-color: white;
+    margin-top: 15vh;
+    border-radius: 2vw;
+    border: solid 3px #FF9A01;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left:628px;
+    flex-direction: column;
+    z-index: 3;
+    position: absolute;
+}
+.container2 h2 {
+    font-family: Roboto;
+    font-size: x-large;
+    margin-top: -1vh;
+    margin-bottom: 4vh;
+    color:#232F3D ;
+}
+
+#signup-mail{
+    padding-right: 250px;
+}
+.usernameField{
+    padding-right: 580px;
+}
+
+ span{
+    color: #FF9A01; 
+}
+#getlogin:hover {
+cursor: pointer;
 }

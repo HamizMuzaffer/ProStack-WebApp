@@ -86,7 +86,7 @@ const signoutWithGoggle = () => signOut(auth)
   });
 
 const login = document.getElementById("myBtn");
-login.addEventListener("click", loginWithGoogle);
+login && login.addEventListener("click", loginWithGoogle);
 
 const logout = document.getElementById("logoutBtn");
 logout && logout.addEventListener("click", signoutWithGoggle)
@@ -127,49 +127,7 @@ let mydropdown = document.getElementById("dropdown");
 let myBlog = document.getElementById("blogForm");
 
 
-// var getFormInfo = ref(database,"blogForm");
-
-// myBlog.addEventListener("submit", submitForm);
-// function submitForm(e){
-//    e.preventDefault();
-//    let queryValue = query.value;
-//    let headingInput = heading.value;
-//    let dropdownInput = mydropdown.value;
-//    console.log(queryValue,headingInput,dropdownInput)
-//    saveMessages(queryValue,headingInput,dropdownInput)
-// }
-
-
-
-// const saveMessages =  (queryValue,headingInput,dropdownInput)=>{
-//    var newBlogForm = getFormInfo.push();
-//    newBlogForm.set(
-//     {
-//          heading: headingInput,
-//          input: queryValue,
-//          category:dropdownInput,
-
-//    })
-// }
-// const addDataInFirestore = async () => {
-//   let queryValue = queryInput.value; 
-//   let headingInput = heading.value;
-//   let dropdownInput = mydropdown.value;
-  
-
-//   const users = {
-    
-//     header: headingInput,
-//     myquery: queryValue,
-//     dropdown : dropdownInput,
-//   };
-
-//   await setDoc(doc(db, "users"), users);
-  
-// };
-
-//  mySumbitBtn.addEventListener("submit",addDataInFirestore)
-myBlog.addEventListener("submit", async function(event) {
+myBlog && myBlog.addEventListener("submit", async function(event) {
   event.preventDefault(); // Prevent default form submission
   const title = document.getElementById("header-box").value;
   
@@ -190,8 +148,6 @@ myBlog.addEventListener("submit", async function(event) {
     console.error("Error adding document: ", error);
   }
 });
-
-
 async function displayBlogPosts() {
   const blogList = document.getElementById("blogList");
 
@@ -199,9 +155,21 @@ async function displayBlogPosts() {
     const querySnapshot = await getDocs(collection(db, "blogPosts"));
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      const listItem = document.createElement("li");
-      listItem.textContent = `Title: ${data.title}, Type: ${data.type}, Category: ${data.category}, Content: ${data.content}`;
-      blogList.appendChild(listItem);
+      const blogMain = document.createElement("div")
+      const MainHead = document.createElement("h1");
+      const MainText = document.createElement("h4")
+      const mycateg  = document.createElement("h4");
+      MainText.setAttribute("class", "myText")
+      MainHead.setAttribute("class","myTitle")
+      mycateg.setAttribute("class", "mycateg")
+      blogMain.setAttribute("class" ,"mypost");
+      mycateg.textContent= `-${data.category}`;
+      MainHead.textContent = `${data.title}`;
+      MainText.textContent = `${data.content}`;
+      blogMain.appendChild(MainHead);
+      blogMain.appendChild(mycateg)
+      blogMain.appendChild(MainText)
+      blogList.appendChild(blogMain);
     });
   } catch (error) {
     console.error("Error fetching documents: ", error);
@@ -210,13 +178,26 @@ async function displayBlogPosts() {
 
 // Call the function to display blog posts
 displayBlogPosts();
+const loginPage = document.getElementById("tick");
+
+function hideDiv(){
+  
+  loginPage.style.zIndex = "0";
+  }
+  const singupLink = document.getElementById("signuptext");
+  singupLink.addEventListener("click",hideDiv);
+
+// Category: ${data.category}, Content: ${data.content}
 
 
+const getLoginPage = document.getElementById("getlogin");
 
+function getDiv(){
+  c
+}
+getLoginPage.addEventListener("click",getDiv);
 
-
-
-/*
-! Hamiz Muzaffer
-*/
-
+const mysignbtn = document.getElementById("signin");
+mysignbtn.addEventListener("click", ()=>{
+  loginPage.style.zIndex = "5";
+})

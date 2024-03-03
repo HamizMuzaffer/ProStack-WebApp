@@ -13,16 +13,23 @@
     
 </head>
 <body>
-    <div class="container">
+    <div class="mainDiv">
+        <img src="./Assests/Images/botIcon.png" class="mainlogo" alt="">
+        <h1 class="main-head">ProStack</h1>
+        <h2 class="sub-head">"Where Developers meet"</h2>
+    </div>
+    <div class="container" id="tick">
         <img src="./Assests/Images/botIcon.png" alt="" class="logo">
         <h2>Sign in to your account</h2>
          <form action="" id="form">
         <p>Email Address</p>
-        <input type="email" class="text-box" id="mail">
+        <input type="email" class="text-box" id="mail" required>
         <p class="password">Password</p>
-        <input type="password" class="text-box2" id="password">
+        <input type="password" class="text-box2" id="password" required>
      
         <button type="submit" class="signinBtn" id="signin">Sign in</button>
+        <p class="signuptext" id="signuptext">doesnot have a account?<span onclick="hideDiv()" class="signup-text2">SignUp</span></p>
+        
     </form>
         <h3 id="sub-text">Or continue with</h3>
         <div class="btn">
@@ -32,7 +39,22 @@
         <button class="github" id="myBtn2"><img src="./Assests/Images/fb.png" alt="" class="btnFacebook">Facebook</button>
     </div>
     </div>
-
+<div class="container2">
+   
+    <img src="./Assests/Images/botIcon.png" alt="" class="logo">
+    <h2>Create your account</h2>
+    <form action="" id="newform"></form>
+        <p id="signup-mail">Email    </p>      
+        <input type="email" class="text-box" id="mail" required>
+        <p class="password">Password</p>
+        <input type="password" class="text-box2" id="password" required>
+        <p id="signup-mail" class="usernameField">Username</p>      
+        <input type="text" class="text-box" id="mail" required>
+        <button type="submit" class="signinBtn" id="signin">Sign Up</button>
+    </form>
+    <h3 id="sub-text">or <span id="getlogin">login
+    </span></h3>
+</div>
 
     
     <script  type="module" src="./login.js"></script>
